@@ -1,4 +1,5 @@
 import { TesteMapa } from "./TesteMapa";
+import { MissaoMapaCard } from './MissaoMapaCard';
 
 export function Conteudo() {
   return (
@@ -13,6 +14,7 @@ export function Conteudo() {
 
       <div className="missoes-grid">
         <TesteMapa />
+        <MissaoMapaCard/>
       </div>
     </main>
   );
