@@ -1,6 +1,6 @@
-import { MissaoCard } from "./MissaoCard";
-import { TesteMapa } from "./TesteMapa";
-
+// import { MissaoCard } from "./MissaoCard";
+// import { TesteMapa } from "./TesteMapa";
+import { CameraApp } from './CameraApp';
 
 export function Conteudo() {
   return (
@@ -14,8 +14,9 @@ export function Conteudo() {
       </header>
 
       <div className="missoes-grid">
-        <TesteMapa />
-        <MissaoCard/>
+        {/* <TesteMapa /> */}
+        {/* <MissaoCard/> */}
+        <CameraApp/>
         
       </div>
     </main>
