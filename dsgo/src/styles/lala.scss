@@ -1,0 +1,18 @@
+$mobile: 480px;
+$tablet: 768px;
+
+@mixin responsivo($dispositivo) {
+  @if $dispositivo == mobile {
+    @media (max-width: $mobile) { @content; }
+  }
+  @else if $dispositivo == tablet {
+    @media (max-width: $tablet) { @content; }
+  }
+}
+
+.container {
+  width: 80%;
+  @include responsivo(mobile) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,54 @@
+
+@use './variaveis.scss' as *;
+
+
+.geolocalizacao-card {
+  background: linear-gradient(135deg, $cor-clara, $cor-destaque);
+  border: 2px solid $cor-destaque;
+  border-radius: $borda-arredondada;
+  padding: $espacamento;
+  margin-bottom: 1.5rem;
+  box-shadow: $sombras;
+
+  .geo-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .geo-icone {
+      font-size: 2rem;
+    }
+  }
+
+  button {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: $borda-arredondada;
+    background-color: $cor-destaque;
+    color: $cor-clara;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      background-color: $cor-destaque-hover;
+    }
+  }
+
+  .status {
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+
+.mapa-container {
+  width: 100%;
+  height: 250px; // ou qualquer tamanho desejado
+  border-radius: $borda-arredondada;
+  overflow: hidden;
+
+  .leaflet-container {
+    width: 100%;
+    height: 100%;
+  }
+}
+}

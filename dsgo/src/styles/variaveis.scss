@@ -1,0 +1,30 @@
+
+$cor-fundo: #f5f7fa; 
+$cor-texto: #1a1a1a; 
+$cor-destaque: #005fa3; 
+$cor-destaque-hover: #004173; 
+$cor-clara: #ffffff; 
+$cor-escura: #0d0d0d; 
+$cor-oposta:#d74b9d ;
+$cor-sucesso: #006400; // Verde escuro (Contraste 10.3:1 com branco)
+$cor-erro: #b22222;    // Vermelho "firebrick" (Contraste 5.9:1 com branco)
+$cor-info: #005fa3;    // Reutilizando seu azul de destaque (Contraste 5.9:1 com branco)
+
+$gradiente-destaque: linear-gradient(135deg, #005fa3, #d74b9d);
+
+$fonte-principal: 'Verdana', sans-serif;
+$tamanho-texto: 1rem;
+$espacamento: 1rem;
+$borda-arredondada: 0.5rem;
+$sombras: 0 2px 5px rgba(0, 0, 0, 0.5);
+
+
+$mobile: 600px;
+$tablet: 1024px;
+
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $cor-escura;
+}

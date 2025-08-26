@@ -1,0 +1,45 @@
+
+@use './variaveis.scss' as *;
+
+.cabecalho {
+  background: $gradiente-destaque;
+  color: $cor-clara;
+  padding: $espacamento;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: $sombras;
+
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .xp-display {
+    background-color: $cor-clara;
+    color: $cor-destaque;
+    padding: 0.5rem 1rem;
+    border-radius: $borda-arredondada;
+    font-weight: bold;
+    box-shadow: $sombras;
+    min-width: 90px;
+    text-align: center;
+
+    span {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .logo {
+      font-size: 1.5rem;
+    }
+
+    .xp-display {
+      width: 100%;
+    }
+  }
+}

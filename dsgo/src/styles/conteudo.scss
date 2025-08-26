@@ -1,0 +1,40 @@
+.conteudo-principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+
+  h1, h2 {
+    color: #003366; // Azul mais escuro (bom contraste WCAG)
+  }
+}
+
+.conteudo-cabecalho {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  p {
+    font-size: 1.1rem;
+    color: #336699;
+  }
+}
+
+.missoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.missao-geo-camera {
+  background: #f0f8ff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.missao-geo-camera .leaflet-container {
+  height: 250px;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 1rem;
+}

@@ -1,0 +1,125 @@
+@use './variaveis.scss' as *;
+
+// O container principal do card da missão
+.missao-mapa-card {
+  background-color: $cor-clara;
+  border-radius: $borda-arredondada * 1.5; // Bordas um pouco mais arredondadas para um look moderno
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: $espacamento * 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: $espacamento; // Espaçamento consistente entre os elementos
+  border: 1px solid #eee;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  // Efeito de "lift" ao passar o mouse, um feedback visual sutil e agradável
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  // Garante que o foco do teclado seja tão claro quanto o hover
+  &:focus-within {
+    box-shadow: 0 0 0 3px $cor-destaque;
+  }
+}
+
+// Cabeçalho com o título da missão
+.missao-header {
+  h3 {
+    margin: 0;
+    // O azul escuro sobre o fundo branco tem contraste excelente (5.9:1)
+    color: $cor-destaque; 
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+}
+
+// Parágrafo com a descrição da missão
+p {
+  // Texto principal com contraste máximo para leitura fácil
+  color: #333; // Um cinza bem escuro, mais suave que o preto puro
+  line-height: 1.6; // Espaçamento entre linhas melhora a legibilidade
+  padding: 10px;
+}
+
+// O container do mapa Leaflet
+.mapa-container {
+  border-radius: $borda-arredondada;
+  overflow: hidden; // Essencial para que o mapa respeite o border-radius
+  border: 1px solid #ddd;
+  // Adiciona uma sombra interna sutil para dar profundidade
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+// O botão principal de ação
+.verificar-botao {
+  // Usando a cor oposta para um Call-to-Action (CTA) vibrante
+  background: $gradiente-destaque;
+  color: $cor-clara;
+  border: none;
+  border-radius: $borda-arredondada;
+  padding: ($espacamento * 0.8) $espacamento;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  
+  // Feedback para interação
+  &:hover:not(:disabled) {
+    transform: scale(1.03);
+    box-shadow: $sombras;
+  }
+
+  // ACESSIBILIDADE: Estado de foco claro para navegação por teclado
+  &:focus-visible {
+    outline: 3px solid $cor-destaque-hover;
+    outline-offset: 3px;
+    box-shadow: none; // Remove outras sombras para não confundir
+  }
+
+  // Estado desabilitado: visualmente claro que não pode ser clicado
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+// A barra de status com o feedback para o aluno
+.status-missao {
+  padding: $espacamento * 0.75;
+  border-radius: $borda-arredondada;
+  font-weight: 600;
+  text-align: center;
+  color: $cor-destaque; // Todas as cores de fundo foram escolhidas para funcionar com texto branco
+  animation: fadeIn 0.5s ease; // Animação sutil de entrada
+
+  // Modificadores de classe baseados no conteúdo do status (usando o emoji)
+  // Esta técnica é divertida e visualmente eficaz
+  &[class*="✅"] {
+    background-color: $cor-destaque;
+  }
+
+  &[class*="❌"],
+  &[class*="⚠️"] {
+    background-color: $cor-erro;
+  }
+
+  &[class*="🔍"] {
+    background-color: $cor-info;
+  }
+}
+
+// Animação simples para a mensagem de status aparecer suavemente
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

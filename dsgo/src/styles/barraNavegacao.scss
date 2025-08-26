@@ -1,0 +1,48 @@
+@use './variaveis.scss' as *;
+
+.barra-navegacao {
+  background-color: $cor-escura;
+  color: $cor-clara;
+  padding: 0.5rem;
+  box-shadow: $sombras;
+
+  ul {
+    display: flex;
+    justify-content: end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: $borda-arredondada;
+      transition: background-color 0.3s ease;
+
+      &:hover,
+      &:focus {
+        background-color: $cor-oposta;
+       
+      }
+    }
+    a{
+      color:$cor-clara;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    li {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+}

@@ -1,0 +1,15 @@
+@use './variaveis.scss' as *;
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: $fonte-principal;
+  background-color: $cor-fundo;
+}
+
+.main-wrapper {
+  flex: 1;
+   @media (max-width: $mobile) {
+    padding: 1rem 0.5rem;
+   }
+}

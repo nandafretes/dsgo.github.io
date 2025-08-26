@@ -1,0 +1,12 @@
+@use './variaveis.scss' as *;
+.footer {
+  background-color: $cor-escura;
+  color: $cor-clara;
+  text-align: center;
+  padding: 2.5rem 1rem; 
+
+  h4 {
+    margin: 0;
+    font-weight: 400;
+  }
+}
